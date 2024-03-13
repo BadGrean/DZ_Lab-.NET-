@@ -1,0 +1,15 @@
+D:\C#\NET\DZ_Lab0\DZ_Lab0\bin\Debug\net8.0\DZ_Lab0.exe
+D:\C#\NET\DZ_Lab0\DZ_Lab0\bin\Debug\net8.0\DZ_Lab0.deps.json
+D:\C#\NET\DZ_Lab0\DZ_Lab0\bin\Debug\net8.0\DZ_Lab0.runtimeconfig.json
+D:\C#\NET\DZ_Lab0\DZ_Lab0\bin\Debug\net8.0\DZ_Lab0.dll
+D:\C#\NET\DZ_Lab0\DZ_Lab0\bin\Debug\net8.0\DZ_Lab0.pdb
+D:\C#\NET\DZ_Lab0\DZ_Lab0\obj\Debug\net8.0\DZ_Lab0.GeneratedMSBuildEditorConfig.editorconfig
+D:\C#\NET\DZ_Lab0\DZ_Lab0\obj\Debug\net8.0\DZ_Lab0.AssemblyInfoInputs.cache
+D:\C#\NET\DZ_Lab0\DZ_Lab0\obj\Debug\net8.0\DZ_Lab0.AssemblyInfo.cs
+D:\C#\NET\DZ_Lab0\DZ_Lab0\obj\Debug\net8.0\DZ_Lab0.csproj.CoreCompileInputs.cache
+D:\C#\NET\DZ_Lab0\DZ_Lab0\obj\Debug\net8.0\DZ_Lab0.sourcelink.json
+D:\C#\NET\DZ_Lab0\DZ_Lab0\obj\Debug\net8.0\DZ_Lab0.dll
+D:\C#\NET\DZ_Lab0\DZ_Lab0\obj\Debug\net8.0\refint\DZ_Lab0.dll
+D:\C#\NET\DZ_Lab0\DZ_Lab0\obj\Debug\net8.0\DZ_Lab0.pdb
+D:\C#\NET\DZ_Lab0\DZ_Lab0\obj\Debug\net8.0\DZ_Lab0.genruntimeconfig.cache
+D:\C#\NET\DZ_Lab0\DZ_Lab0\obj\Debug\net8.0\ref\DZ_Lab0.dll
