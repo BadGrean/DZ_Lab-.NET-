@@ -1,0 +1,17 @@
+D:\C#\NET\DZ_Lab0\DZ_Lab3_IMG\obj\Debug\net8.0-windows\DZ_Lab3_IMG.Form1.resources
+D:\C#\NET\DZ_Lab0\DZ_Lab3_IMG\obj\Debug\net8.0-windows\DZ_Lab3_IMG.csproj.GenerateResource.cache
+D:\C#\NET\DZ_Lab0\DZ_Lab3_IMG\obj\Debug\net8.0-windows\DZ_Lab3_IMG.GeneratedMSBuildEditorConfig.editorconfig
+D:\C#\NET\DZ_Lab0\DZ_Lab3_IMG\obj\Debug\net8.0-windows\DZ_Lab3_IMG.AssemblyInfoInputs.cache
+D:\C#\NET\DZ_Lab0\DZ_Lab3_IMG\obj\Debug\net8.0-windows\DZ_Lab3_IMG.AssemblyInfo.cs
+D:\C#\NET\DZ_Lab0\DZ_Lab3_IMG\obj\Debug\net8.0-windows\DZ_Lab3_IMG.csproj.CoreCompileInputs.cache
+D:\C#\NET\DZ_Lab0\DZ_Lab3_IMG\obj\Debug\net8.0-windows\DZ_Lab3_IMG.sourcelink.json
+D:\C#\NET\DZ_Lab0\DZ_Lab3_IMG\bin\Debug\net8.0-windows\DZ_Lab3_IMG.exe
+D:\C#\NET\DZ_Lab0\DZ_Lab3_IMG\bin\Debug\net8.0-windows\DZ_Lab3_IMG.deps.json
+D:\C#\NET\DZ_Lab0\DZ_Lab3_IMG\bin\Debug\net8.0-windows\DZ_Lab3_IMG.runtimeconfig.json
+D:\C#\NET\DZ_Lab0\DZ_Lab3_IMG\bin\Debug\net8.0-windows\DZ_Lab3_IMG.dll
+D:\C#\NET\DZ_Lab0\DZ_Lab3_IMG\bin\Debug\net8.0-windows\DZ_Lab3_IMG.pdb
+D:\C#\NET\DZ_Lab0\DZ_Lab3_IMG\obj\Debug\net8.0-windows\DZ_Lab3_IMG.dll
+D:\C#\NET\DZ_Lab0\DZ_Lab3_IMG\obj\Debug\net8.0-windows\refint\DZ_Lab3_IMG.dll
+D:\C#\NET\DZ_Lab0\DZ_Lab3_IMG\obj\Debug\net8.0-windows\DZ_Lab3_IMG.pdb
+D:\C#\NET\DZ_Lab0\DZ_Lab3_IMG\obj\Debug\net8.0-windows\DZ_Lab3_IMG.genruntimeconfig.cache
+D:\C#\NET\DZ_Lab0\DZ_Lab3_IMG\obj\Debug\net8.0-windows\ref\DZ_Lab3_IMG.dll
