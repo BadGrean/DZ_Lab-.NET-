@@ -1,0 +1,122 @@
+﻿@page "/weather"
+@rendermode InteractiveServer
+@attribute [StreamRendering]
+
+<PageTitle>Weather</PageTitle>
+
+<h1>Weather</h1>
+
+<p>This component demonstrates showing data.</p>
+
+@if (forecasts == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <input class="form-control" @oninput="@Input" placeholder="Filter by summary" />
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Temp. (C)</th>
+                <th>Temp. (F)</th>
+                <th>Summary</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var forecast in forecasts)
+            {
+                <tr>
+                    <td>@forecast.Date.ToShortDateString()</td>
+                    <td>@forecast.TemperatureC</td>
+                    <td>@forecast.TemperatureF</td>
+                    <td>@forecast.Summary</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <p>Number of warm days (temperature above 15°C): @warmDays</p>
+
+    <button class="btn btn-primary" @onclick="WarmDaysFilter">Show Warm Days</button>
+    <button class="btn btn-secondary" @onclick="Restore">Restore</button>
+}
+
+@code {
+    private WeatherForecast[]? forecasts;
+    private WeatherForecast[]? allForecasts;
+    private int warmDays;
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Simulate asynchronous loading to demonstrate streaming rendering
+        await Task.Delay(500);
+
+        var startDate = DateOnly.FromDateTime(DateTime.Now);
+
+        // Define temperature ranges for summaries
+        var temperatureRanges = new[]
+        {
+            new { Min = int.MinValue, Max = -10, Summary = "Freezing" },
+            new { Min = -10, Max = 0, Summary = "Bracing" },
+            new { Min = 0, Max = 5, Summary = "Chilly" },
+            new { Min = 5, Max = 10, Summary = "Cool" },
+            new { Min = 10, Max = 15, Summary = "Mild" },
+            new { Min = 15, Max = 20, Summary = "Warm" },
+            new { Min = 20, Max = 25, Summary = "Balmy" },
+            new { Min = 25, Max = 30, Summary = "Hot" },
+            new { Min = 30, Max = 35, Summary = "Sweltering" },
+            new { Min = 35, Max = int.MaxValue, Summary = "Scorching" }
+        };
+
+        // Generate forecasts
+        allForecasts = Enumerable.Range(1, 10).Select(index =>
+        {
+            var temperatureC = Random.Shared.Next(-20, 55);
+            var summary = temperatureRanges.First(tr => temperatureC >= tr.Min && temperatureC < tr.Max).Summary;
+
+            return new WeatherForecast
+            {
+                Date = startDate.AddDays(index),
+                TemperatureC = temperatureC,
+                Summary = summary
+            };
+        }).ToArray();
+
+        forecasts = allForecasts;
+        warmDays = forecasts.Count(forecast => forecast.TemperatureC > 15);
+    }
+
+    private void WarmDaysFilter()
+    {
+        forecasts = allForecasts?.Where(forecast => forecast.TemperatureC > 15).ToArray();
+    }
+
+    private void Restore()
+    {
+        forecasts = allForecasts;
+    }
+
+    private void Input(ChangeEventArgs arg)
+    {
+        var filter = arg.Value?.ToString();
+        if (!string.IsNullOrEmpty(filter))
+        {
+            forecasts = allForecasts?.Where(forecast => forecast.Summary != null && forecast.Summary.Contains(filter, StringComparison.OrdinalIgnoreCase)).ToArray();
+        }
+        else
+        {
+            forecasts = allForecasts;
+        }
+    }
+
+    private class WeatherForecast
+    {
+        public DateOnly Date { get; set; }
+        public int TemperatureC { get; set; }
+        public string? Summary { get; set; }
+        public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+    }
+}

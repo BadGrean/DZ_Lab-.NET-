@@ -1,0 +1,69 @@
+﻿@page "/movies/details"
+@attribute [Authorize]
+@inject DZ_Lab4_2.Data.ApplicationDbContext DB
+@using DZ_Lab4_2.Models
+@inject NavigationManager NavigationManager
+@using Microsoft.EntityFrameworkCore
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.Authorization
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+<PageTitle>Details</PageTitle>
+
+<h1>Details</h1>
+
+<div>
+    <h4>Movie</h4>
+    <hr />
+    @if (movie is null)
+    {
+        <p><em>Loading...</em></p>
+    }
+    else
+    {
+        <AuthorizeView>
+            <Authorized>
+                <dl class="row">
+                    <dt class="col-sm-2">Title</dt>
+                    <dd class="col-sm-10">@movie.Title</dd>
+                    <dt class="col-sm-2">Description</dt>
+                    <dd class="col-sm-10">@movie.Description</dd>
+                    <dt class="col-sm-2">ReleaseDate</dt>
+                    <dd class="col-sm-10">@movie.ReleaseDate?.ToString("yyyy-MM-dd")</dd>
+                    <dt class="col-sm-2">Rate</dt>
+                    <dd class="col-sm-10">@movie.Rate</dd>
+                </dl>
+            </Authorized>
+            <NotAuthorized>
+                <p>You must be logged in to view the details.</p>
+            </NotAuthorized>
+        </AuthorizeView>
+        <div>
+            <a href="@($"/movies/edit?id={movie.Id}")">Edit</a> |
+            <a href="@($"/movies")">Back to List</a>
+        </div>
+    }
+</div>
+
+@code {
+    private Movies? movie;
+
+    [SupplyParameterFromQuery]
+    public int Id { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+
+        if (user.Identity is not null && user.Identity.IsAuthenticated)
+        {
+            movie = await DB.Movies.FirstOrDefaultAsync(m => m.Id == Id);
+        }
+
+        if (movie is null)
+        {
+            NavigationManager.NavigateTo("notfound");
+        }
+    }
+}
